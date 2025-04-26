@@ -116,7 +116,32 @@ export default function VideoUploader() {
                 <p className="error-message">{result}</p>
             )}
         </div>
+
+        <section className="model-preformance">
+
+        <button id="viewDetailsBtn" type="button" className="btn">View Details</button>
+
+        <div className="metrics">
+      <div className="metric-card">
+        <div className="metric-value">0%</div>
+        <div className="metric-label">Detection Accuracy</div>
       </div>
+      <div className="metric-card">
+        <div className="metric-value">0</div>
+        <div className="metric-label">False Positives</div>
+      </div>
+      <div className="metric-card">
+        <div className="metric-value">0%</div>
+        <div className="metric-label">Accuracy Gain</div>
+      </div>
+    </div>
+      </section>
+      </div>
+      <section className="upload-progress">
+    <div className="progress-bar-container">
+      <div id="progressBar" className="progress-bar"></div>
+    </div>
+  </section>
 
     </div>
   );
