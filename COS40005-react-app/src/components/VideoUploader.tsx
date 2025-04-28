@@ -1,6 +1,8 @@
 import axios from 'axios';
 import { ChangeEvent, useState } from 'react';
 import './VideoUploader.css';
+import { useNavigate } from 'react-router-dom';
+
 
 type UploadStatus = 'idle' | 'uploading' | 'success' | 'error';
 
@@ -10,6 +12,7 @@ export default function VideoUploader() {
   const [uploadProgress, setUploadProgress] = useState(0);
   const [status, setStatus] = useState<UploadStatus>('idle');
   const [result, setResult] = useState('');
+  const navigate = useNavigate();
   
 
   function handleFileChange(e: ChangeEvent<HTMLInputElement>) {
@@ -26,6 +29,11 @@ export default function VideoUploader() {
         setUploadProgress(0);
     }
   }
+
+    function handleViewDetails() {
+      navigate('/details');
+    }
+
 
   async function handleFileUpload() {
     if (!video) return alert('Please select a video first.');
@@ -119,7 +127,8 @@ export default function VideoUploader() {
 
         <section className="model-preformance">
 
-        <button id="viewDetailsBtn" type="button" className="btn">View Details</button>
+        <button id="viewDetailsBtn" type="button" className="btn" onClick={handleViewDetails}>
+          View Details</button>
 
         <div className="metrics">
       <div className="metric-card">
