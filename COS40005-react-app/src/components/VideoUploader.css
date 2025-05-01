@@ -112,6 +112,24 @@
     margin-top: 5px;
   }
   
+/* frame  */
+.frames-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-around;
+}
+
+.frame-card {
+  width: 200px;
+  text-align: center;
+}
+
+.detection-frame {
+  width: 100%;
+  border: 2px solid #cd1010;
+}
+
   /*Detect button*/
   .upload-button {
     display: block;
